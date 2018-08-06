@@ -1,3 +1,6 @@
+#! python3
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 import discord
 import urllib.request
 import urllib.error

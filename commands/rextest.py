@@ -31,15 +31,19 @@ class test:
             output = response.read()
             #print 'API response: ' + output
             response_decoded = json.loads(output)
+            warns = response_decoded["Warnings"]
+            er = response_decoded["Errors"]
+            re = response_decoded["Result"]
+            st = response_decoded["Stats"]
             #print "Decoded JSON:"
             #print response_decoded
-            await self.bot.say("**Warnings returned**\n```{}```".format(response_decoded["Warnings"]))
+            await self.bot.say("**Warnings returned**\n```{}```".format(warns))
             time.sleep(0.5)
-            await self.bot.say("**Errors returned**\n```{}```".format(response_decoded["Errors"]))
+            await self.bot.say("**Errors returned**\n```{}```".format(er))
             time.sleep(0.5)
-            await self.bot.say("**Result**\n```{}```".format(response_decoded["Result"]))
+            await self.bot.say("**Result**\n```{}```".format(re))
             time.sleep(0.5)
-            await self.bot.say("**Stats**\n```{}```".format(response_decoded["Stats"]))
+            await self.bot.say("**Stats**\n```{}```".format(st))
         except Exception as e:
             await self.bot.say("I have ran into a error :x:")
             raise

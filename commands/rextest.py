@@ -31,6 +31,10 @@ class test:
             output = response.read()
             #print 'API response: ' + output
             response_decoded = json.loads(output)
+            warns = response_decoded["Warnings"]
+            er = response_decoded["Errors"]
+            re = response_decoded["Result"]
+            st = response_decoded["Stats"]
             #print "Decoded JSON:"
             #print response_decoded
             await self.bot.say("**Warnings returned**\n```{}```".format(response_decoded["Warnings"]))

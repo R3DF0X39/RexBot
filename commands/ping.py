@@ -27,9 +27,8 @@ class ping:#This is like the section of each command, when you see the help menu
         upd.set_footer(text="This took me {}ms to send".format(ping))
         response = await self.bot.edit_message(em, embed=upd)
         issue = ctx.message
-        time.sleep(10)
-        await self.bot.delete_message(response)
-        time.sleep(0.5)
+        await self.bot.delete_message(issue)
+        time.sleep(3)
         await self.bot.delete_message(issue)
         
         
